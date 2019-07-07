@@ -1,1 +1,1 @@
-# stepik-page-object-model
+## Паттерн Page Object Model

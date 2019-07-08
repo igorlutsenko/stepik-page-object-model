@@ -1,6 +1,5 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-import time
 
 
 class ProductPage(BasePage):
@@ -23,8 +22,15 @@ class ProductPage(BasePage):
         try:
             assert self.get_product_name() == name_in_basket
             assert self.get_product_price() == price_in_basket
-        except:
+        except AssertionError:
             print(f"{link} FAILED")
         else:
             print("--OK--")
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"
+
+    def should_not_be_success_message_is_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented, but should not be"

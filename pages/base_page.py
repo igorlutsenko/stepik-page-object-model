@@ -24,6 +24,10 @@ class BasePage(object):
     def open(self):
         self.browser.get(self.url)
 
+    def go_to_cart_page(self):
+        cart_link = self.browser.find_element(*BasePageLocators.SHOW_CART_LINK)
+        cart_link.click()
+
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)

@@ -5,6 +5,7 @@ class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     REGISTRATION_LINK = (By.CSS_SELECTOR, "#registration_link")
     SHOW_CART_LINK = (By.CSS_SELECTOR, ".basket-mini .btn-group>a")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
 class CartPageLocators(object):
